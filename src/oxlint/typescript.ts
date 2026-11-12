@@ -13,6 +13,7 @@ export const tsRules: DummyRuleMap = {
 	'typescript/no-misused-promises': ['warn', { checksVoidReturn: false }],
 	'typescript/consistent-type-imports': 'off',
 	'typescript/prefer-nullish-coalescing': ['warn'],
+	'import/consistent-type-specifier-style': ['error', 'prefer-top-level'],
 	// Not implemented yet in tsgolint
 	// 'typescript/naming-convention': [
 	// 	'error',
