@@ -37,6 +37,8 @@ export default defineOxlintConfig({
 | `react`     | `false` | `react`, `jsx-a11y`pluginとhooks関連のruleを有効化                                                        |
 | `next`      | `false` | `react`と`nextjs`pluginを有効化し、App RouterとPages Routerのファイルで`import/no-default-export`を無効化 |
 
+何も抑制していない無効化コメント(`// oxlint-disable-line`, `// eslint-disable-line`等)は警告されます。
+
 `overrides`に指定した値は、生成される設定のトップレベルへ追加されます。`overrides.overrides`に指定したファイル単位の設定は、本パッケージの設定より後に適用されます。
 
 ### Vueファイルの制約

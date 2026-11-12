@@ -71,6 +71,7 @@ function defineOxlintConfig(opts: OxlintConfigOptions = {}): OxlintConfig {
 		plugins: opts.overrides?.plugins ?? plugins,
 		options: {
 			typeAware,
+			reportUnusedDisableDirectives: 'warn',
 			...opts.overrides?.options,
 		},
 		extends: [...configs, ...(opts.overrides?.extends ?? [])],
