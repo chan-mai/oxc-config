@@ -1,0 +1,59 @@
+{
+	"name": "@chan-mai/oxc-config",
+	"version": "0.1.0",
+	"description": "oxlint/oxfmt config for chan-mai",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/chan-mai/oxc-config"
+	},
+	"files": [
+		"built"
+	],
+	"type": "module",
+	"exports": {
+		".": {
+			"import": "./built/index.mjs",
+			"types": "./built/index.d.mts"
+		},
+		"./oxlint": {
+			"import": "./built/oxlint/index.mjs",
+			"types": "./built/oxlint/index.d.mts"
+		},
+		"./oxfmt": {
+			"import": "./built/oxfmt/index.mjs",
+			"types": "./built/oxfmt/index.d.mts"
+		}
+	},
+	"scripts": {
+		"build": "tsdown",
+		"typecheck": "tsc --noEmit",
+		"lint": "pnpm build && oxlint",
+		"format": "pnpm build && oxfmt",
+		"format:check": "pnpm build && oxfmt --check"
+	},
+	"devDependencies": {
+		"oxfmt": "0.78.0",
+		"oxlint": "1.93.0",
+		"oxlint-tsgolint": "7.0.2007",
+		"tsdown": "0.23.7",
+		"typescript": "7.0.2"
+	},
+	"peerDependencies": {
+		"oxfmt": ">=0.78.0",
+		"oxlint": "^1.93.0",
+		"oxlint-tsgolint": "^7"
+	},
+	"peerDependenciesMeta": {
+		"oxfmt": {
+			"optional": true
+		},
+		"oxlint": {
+			"optional": true
+		},
+		"oxlint-tsgolint": {
+			"optional": true
+		}
+	},
+	"packageManager": "pnpm@12.9.0"
+}
