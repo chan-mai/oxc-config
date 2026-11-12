@@ -26,6 +26,8 @@ interface OxlintConfigOptions {
 		react?: boolean;
 		/** Defaults to false */
 		next?: boolean;
+		/** Defaults to false */
+		vitest?: boolean;
 	};
 	overrides?: Partial<OxlintConfig>;
 }
@@ -39,12 +41,14 @@ function defineOxlintConfig(opts: OxlintConfigOptions = {}): OxlintConfig {
 	const vue = (f.vue ?? false) || nuxt;
 	const next = f.next ?? false;
 	const react = (f.react ?? false) || next;
+	const vitest = f.vitest ?? false;
 
 	// 既定プラグイン + import
 	const plugins: LintPlugin[] = ['eslint', 'typescript', 'unicorn', 'oxc', 'import'];
 	if (vue) plugins.push('vue');
 	if (react) plugins.push('react', 'jsx-a11y');
 	if (next) plugins.push('nextjs');
+	if (vitest) plugins.push('vitest');
 
 	const configs: OxlintConfig[] = [];
 	if (js) configs.push(jsConfig());
