@@ -27,6 +27,7 @@
 	},
 	"scripts": {
 		"build": "tsdown",
+		"prepack": "pnpm build",
 		"typecheck": "tsc --noEmit",
 		"lint": "pnpm build && oxlint",
 		"format": "pnpm build && oxfmt",
