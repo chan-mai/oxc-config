@@ -73,3 +73,13 @@ export default defineOxfmtConfig({
 - import文を builtin, external, internal, parent, sibling, index, style の順に並べ、型インポートを空行の後にまとめる
 - `~/`, `~~/`, `@/`, `@@/`, `#`で始まるimportをinternalとして扱う
 - `package.json`のフィールドを並べ替える(oxfmtの既定動作)
+
+`features.tailwindcss`に`true`を指定すると、Tailwind CSSのクラス名を並べ替えます(`sortTailwindcss`)。オブジェクトを指定すると、`sortTailwindcss`の設定として使います。Tailwind CSS v4でテーマを拡張している場合は、`stylesheet`にCSSファイルのパスを指定してください。
+
+```ts
+export default defineOxfmtConfig({
+	features: {
+		tailwindcss: { stylesheet: './app/assets/css/main.css' },
+	},
+});
+```
