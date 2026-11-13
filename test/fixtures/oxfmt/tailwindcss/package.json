@@ -1,0 +1,8 @@
+{
+	"name": "fixture-oxfmt-tailwindcss",
+	"private": true,
+	"type": "module",
+	"devDependencies": {
+		"tailwindcss": "4.3.5"
+	}
+}

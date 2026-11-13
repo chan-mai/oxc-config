@@ -2,6 +2,6 @@ import { defineOxlintConfig } from './built/index.mjs';
 
 export default defineOxlintConfig({
 	overrides: {
-		ignorePatterns: ['built/**/*'],
+		ignorePatterns: ['built/**/*', 'test/fixtures/**/*'],
 	},
 });

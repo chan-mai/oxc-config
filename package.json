@@ -29,16 +29,19 @@
 		"build": "tsdown",
 		"prepack": "pnpm build",
 		"typecheck": "tsc --noEmit",
-		"lint": "pnpm build && oxlint",
-		"format": "pnpm build && oxfmt",
-		"format:check": "pnpm build && oxfmt --check"
+		"lint": "pnpm build && oxlint --disable-nested-config",
+		"format": "pnpm build && oxfmt --disable-nested-config",
+		"format:check": "pnpm build && oxfmt --check --disable-nested-config",
+		"test": "vitest run"
 	},
 	"devDependencies": {
+		"@types/node": "26.6.6",
 		"oxfmt": "0.78.0",
 		"oxlint": "1.93.0",
 		"oxlint-tsgolint": "7.0.2007",
 		"tsdown": "0.23.7",
-		"typescript": "7.0.2"
+		"typescript": "7.0.2",
+		"vitest": "5.1.0"
 	},
 	"peerDependencies": {
 		"oxfmt": ">=0.78.0",

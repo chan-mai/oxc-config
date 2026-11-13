@@ -1,0 +1,11 @@
+{
+	"name": "fixture-oxlint-vue",
+	"private": true,
+	"type": "module",
+	"dependencies": {
+		"vue": "3.5.45"
+	},
+	"devDependencies": {
+		"@vue/tsconfig": "0.9.1"
+	}
+}
