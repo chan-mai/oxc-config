@@ -21,9 +21,6 @@ export default defineOxlintConfig({
 	features: {
 		nuxt: true,
 	},
-	overrides: {
-		ignorePatterns: ['.nuxt/**', '.output/**'],
-	},
 });
 ```
 

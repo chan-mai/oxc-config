@@ -1,5 +1,8 @@
 import type { OxlintConfig } from 'oxlint';
 
+// Nuxtの生成物
+export const nuxtIgnorePatterns = ['**/.nuxt/**', '**/.output/**'];
+
 // Nuxt, Nitroがdefault exportを読み込むファイル
 export const nuxtDefaultExportFiles = [
 	'**/pages/**',
