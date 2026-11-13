@@ -1,5 +1,5 @@
 import { beforeAll, describe, expect, it } from 'vitest';
-import { fixtureDir, runOxlint, severityOf } from './helpers.js';
+import { configuredRules, fixtureDir, runOxlint, severityOf } from './helpers.js';
 
 import type { LintResult } from './helpers.js';
 
@@ -124,5 +124,18 @@ describe('oxlint: unused disable directive', () => {
 		expect(found).toEqual([
 			expect.objectContaining({ severity: 'warning', message: expect.stringContaining('Unused oxlint-disable directive') }),
 		]);
+	});
+});
+
+describe('oxlint: type-aware rules', () => {
+	const rules = ['typescript/no-unnecessary-condition', 'typescript/no-misused-promises', 'typescript/prefer-nullish-coalescing'];
+
+	it('are configured when typeAware is enabled', () => {
+		expect(configuredRules(fixtureDir('oxlint', 'default'))).toEqual(expect.arrayContaining(rules));
+	});
+
+	it('are not configured when typeAware is disabled', () => {
+		const configured = configuredRules(fixtureDir('oxlint', 'no-type-aware'));
+		expect(configured.filter(rule => rules.includes(rule))).toEqual([]);
 	});
 });

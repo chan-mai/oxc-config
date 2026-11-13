@@ -52,7 +52,7 @@ function defineOxlintConfig(opts: OxlintConfigOptions = {}): OxlintConfig {
 
 	const configs: OxlintConfig[] = [];
 	if (js) configs.push(jsConfig());
-	if (ts) configs.push(tsConfig());
+	if (ts) configs.push(tsConfig(typeAware));
 	if (vue) configs.push(vueConfig());
 	if (nuxt) configs.push(nuxtConfig());
 	if (react) configs.push(reactConfig());
@@ -84,7 +84,7 @@ function defineOxlintConfig(opts: OxlintConfigOptions = {}): OxlintConfig {
 
 export { defineOxlintConfig };
 export { jsRules as oxlintJsRules } from './javascript.js';
-export { tsRules as oxlintTsRules } from './typescript.js';
+export { tsRules as oxlintTsRules, tsTypeAwareRules as oxlintTsTypeAwareRules } from './typescript.js';
 export { vueRules as oxlintVueRules } from './vue.js';
 export { reactRules as oxlintReactRules, reactJsxRules as oxlintReactJsxRules } from './react.js';
 
