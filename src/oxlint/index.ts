@@ -5,6 +5,7 @@ import { nuxtConfig, nuxtIgnorePatterns } from './nuxt.js';
 import { reactConfig } from './react.js';
 import { tsConfig } from './typescript.js';
 import { vueConfig } from './vue.js';
+import { workersConfig, workersDefaultEntryFiles } from './workers.js';
 
 import type { OxlintConfig } from 'oxlint';
 
@@ -28,6 +29,8 @@ interface OxlintConfigOptions {
 		next?: boolean;
 		/** Defaults to false */
 		vitest?: boolean;
+		/** Defaults to false. true targets src/index.{ts,js} */
+		workers?: boolean | { entry: string[] };
 	};
 	overrides?: Partial<OxlintConfig>;
 }
@@ -42,6 +45,7 @@ function defineOxlintConfig(opts: OxlintConfigOptions = {}): OxlintConfig {
 	const next = f.next ?? false;
 	const react = (f.react ?? false) || next;
 	const vitest = f.vitest ?? false;
+	const workers = f.workers ?? false;
 
 	// 既定プラグイン + import
 	const plugins: LintPlugin[] = ['eslint', 'typescript', 'unicorn', 'oxc', 'import'];
@@ -57,6 +61,7 @@ function defineOxlintConfig(opts: OxlintConfigOptions = {}): OxlintConfig {
 	if (nuxt) configs.push(nuxtConfig());
 	if (react) configs.push(reactConfig());
 	if (next) configs.push(nextConfig());
+	if (workers) configs.push(workersConfig(workers === true ? workersDefaultEntryFiles : workers.entry));
 	// 言語別設定より後に適用
 	configs.push({
 		overrides: [
