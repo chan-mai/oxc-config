@@ -1,13 +1,13 @@
 import type { OxlintConfig } from 'oxlint';
 
-// Nuxtがdefault exportを読み込むファイル
+// Nuxt, Nitroがdefault exportを読み込むファイル
 export const nuxtDefaultExportFiles = [
 	'**/pages/**',
 	'**/layouts/**',
-	'**/middleware/**',
-	'**/plugins/**',
-	'**/server/**',
-	'**/modules/**',
+	// 直下と*/indexのみ読込
+	'**/{middleware,plugins,modules}/*',
+	'**/{middleware,plugins,modules}/*/index.*',
+	'**/server/{api,routes,middleware,plugins,tasks,modules}/**',
 	'**/app.config.ts',
 	'**/router.options.ts',
 ];
