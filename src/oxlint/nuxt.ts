@@ -11,6 +11,8 @@ export const nuxtDefaultExportFiles = [
 	'**/{middleware,plugins,modules}/*',
 	'**/{middleware,plugins,modules}/*/index.*',
 	'**/server/{api,routes,middleware,plugins,tasks,modules}/**',
+	// @nuxtjs/i18nのlangDir
+	'**/i18n/locales/**',
 	'**/app.config.ts',
 	'**/router.options.ts',
 ];
