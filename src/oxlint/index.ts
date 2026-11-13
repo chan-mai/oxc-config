@@ -1,7 +1,7 @@
 import { configFiles } from './globs.js';
 import { jsConfig } from './javascript.js';
 import { nextConfig } from './next.js';
-import { nuxtConfig } from './nuxt.js';
+import { nuxtConfig, nuxtIgnorePatterns } from './nuxt.js';
 import { reactConfig } from './react.js';
 import { tsConfig } from './typescript.js';
 import { vueConfig } from './vue.js';
@@ -84,6 +84,7 @@ function defineOxlintConfig(opts: OxlintConfigOptions = {}): OxlintConfig {
 			...opts.overrides?.options,
 		},
 		extends: [...configs, ...(opts.overrides?.extends ?? [])],
+		ignorePatterns: [...(nuxt ? nuxtIgnorePatterns : []), ...(opts.overrides?.ignorePatterns ?? [])],
 	};
 }
 

@@ -21,23 +21,20 @@ export default defineOxlintConfig({
 	features: {
 		nuxt: true,
 	},
-	overrides: {
-		ignorePatterns: ['.nuxt/**', '.output/**'],
-	},
 });
 ```
 
-| feature     | 既定値  | 内容                                                                                                      |
-| ----------- | ------- | --------------------------------------------------------------------------------------------------------- |
-| `js`        | `true`  | `js, jsx, mjs, cjs`にJavaScript用ruleを適用                                                               |
-| `ts`        | `true`  | `ts, tsx, mts, cts`にJavaScript用とTypeScript用のruleを適用                                               |
-| `typeAware` | `true`  | type-aware lintを有効化                                                                                   |
-| `vue`       | `false` | `vue`pluginを有効化し、`.vue`にruleを適用                                                                 |
-| `nuxt`      | `false` | `vue`を有効化し、Nuxtがdefault exportを読み込むディレクトリで`import/no-default-export`を無効化           |
-| `react`     | `false` | `react`, `jsx-a11y`pluginとhooks関連のruleを有効化                                                        |
-| `next`      | `false` | `react`と`nextjs`pluginを有効化し、App RouterとPages Routerのファイルで`import/no-default-export`を無効化 |
-| `vitest`    | `false` | `vitest`pluginを有効化                                                                                    |
-| `workers`   | `false` | Cloudflare Workersのエントリポイントで`import/no-default-export`を無効化                                  |
+| feature     | 既定値  | 内容                                                                                                        |
+| ----------- | ------- | ----------------------------------------------------------------------------------------------------------- |
+| `js`        | `true`  | `js, jsx, mjs, cjs`にJavaScript用ruleを適用                                                                 |
+| `ts`        | `true`  | `ts, tsx, mts, cts`にJavaScript用とTypeScript用のruleを適用                                                 |
+| `typeAware` | `true`  | type-aware lintを有効化                                                                                     |
+| `vue`       | `false` | `vue`pluginを有効化し、`.vue`にruleを適用                                                                   |
+| `nuxt`      | `false` | `vue`を有効化し、Nuxtと`@nuxtjs/i18n`がdefault exportを読み込むファイルで`import/no-default-export`を無効化 |
+| `react`     | `false` | `react`, `jsx-a11y`pluginとhooks関連のruleを有効化                                                          |
+| `next`      | `false` | `react`と`nextjs`pluginを有効化し、App RouterとPages Routerのファイルで`import/no-default-export`を無効化   |
+| `vitest`    | `false` | `vitest`pluginを有効化                                                                                      |
+| `workers`   | `false` | Cloudflare Workersのエントリポイントで`import/no-default-export`を無効化                                    |
 
 `features.workers`に`true`を指定すると、`**/src/index.{ts,js}`をCloudflare Workersのエントリポイントとして扱います。wranglerの`main`に別のファイルを指定している場合は、`entry`にそのパスを指定してください。`entry`を指定した場合は、指定したパスだけが対象になります。
 

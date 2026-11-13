@@ -1,5 +1,8 @@
 import type { OxlintConfig } from 'oxlint';
 
+// Nuxtの生成物
+export const nuxtIgnorePatterns = ['**/.nuxt/**', '**/.output/**'];
+
 // Nuxt, Nitroがdefault exportを読み込むファイル
 export const nuxtDefaultExportFiles = [
 	'**/pages/**',
@@ -8,6 +11,8 @@ export const nuxtDefaultExportFiles = [
 	'**/{middleware,plugins,modules}/*',
 	'**/{middleware,plugins,modules}/*/index.*',
 	'**/server/{api,routes,middleware,plugins,tasks,modules}/**',
+	// @nuxtjs/i18nのlangDir
+	'**/i18n/locales/**',
 	'**/app.config.ts',
 	'**/router.options.ts',
 ];
