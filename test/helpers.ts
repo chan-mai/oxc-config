@@ -64,3 +64,19 @@ export function runOxlint(dir: string): LintResult {
 export function severityOf(diagnostics: Diagnostic[], filename: string, code: string): string | undefined {
 	return diagnostics.find(d => d.filename === filename && d.code === code)?.severity;
 }
+
+interface PrintedConfig {
+	rules?: Record<string, unknown>;
+	overrides?: { rules?: Record<string, unknown> }[];
+}
+
+// トップレベルとoverridesのrule名
+export function configuredRules(dir: string): string[] {
+	const result = runBin(dir, 'oxlint', ['--print-config']);
+	if (result.status !== 0) {
+		throw new Error(`oxlint --print-config exited with ${String(result.status)}\n${result.stderr}`);
+	}
+	const config = JSON.parse(result.stdout) as PrintedConfig;
+	const maps = [config.rules ?? {}, ...(config.overrides ?? []).map(o => o.rules ?? {})];
+	return [...new Set(maps.flatMap(m => Object.keys(m)))];
+}

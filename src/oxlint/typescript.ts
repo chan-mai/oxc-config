@@ -5,15 +5,19 @@ import type { DummyRuleMap, OxlintConfig } from 'oxlint';
 
 export const tsRules: DummyRuleMap = {
 	'typescript/no-explicit-any': ['warn'],
-	'typescript/no-unnecessary-condition': ['warn'],
 	'typescript/no-require-imports': ['warn', { allowAsImport: true }],
 	'typescript/no-inferrable-types': ['warn'],
 	'typescript/no-non-null-assertion': ['warn'],
 	'typescript/explicit-function-return-type': ['off'],
-	'typescript/no-misused-promises': ['warn', { checksVoidReturn: false }],
 	'typescript/consistent-type-imports': 'off',
-	'typescript/prefer-nullish-coalescing': ['warn'],
 	'import/consistent-type-specifier-style': ['error', 'prefer-top-level'],
+};
+
+// 型情報必須
+export const tsTypeAwareRules: DummyRuleMap = {
+	'typescript/no-unnecessary-condition': ['warn'],
+	'typescript/no-misused-promises': ['warn', { checksVoidReturn: false }],
+	'typescript/prefer-nullish-coalescing': ['warn'],
 	// Not implemented yet in tsgolint
 	// 'typescript/naming-convention': [
 	// 	'error',
@@ -28,7 +32,7 @@ export const tsRules: DummyRuleMap = {
 	// ],
 };
 
-export function tsConfig(): OxlintConfig {
+export function tsConfig(typeAware: boolean): OxlintConfig {
 	return {
 		overrides: [
 			{
@@ -36,6 +40,7 @@ export function tsConfig(): OxlintConfig {
 				rules: {
 					...jsRules,
 					...tsRules,
+					...(typeAware ? tsTypeAwareRules : {}),
 				},
 			},
 		],
