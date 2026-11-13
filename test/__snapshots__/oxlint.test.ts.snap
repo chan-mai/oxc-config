@@ -1,0 +1,233 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`oxlint: default > matches snapshot 1`] = `
+[
+  {
+    "code": "import(no-default-export)",
+    "column": 8,
+    "filename": "src/default-export.ts",
+    "line": 1,
+    "message": "Prefer named exports",
+    "severity": "warning",
+  },
+  {
+    "code": "",
+    "column": 27,
+    "filename": "src/disable-directive.ts",
+    "line": 1,
+    "message": "Unused oxlint-disable directive (no problems were reported).",
+    "severity": "warning",
+  },
+  {
+    "code": "eslint(no-var)",
+    "column": 1,
+    "filename": "src/legacy.js",
+    "line": 1,
+    "message": "Unexpected var, use let or const instead.",
+    "severity": "error",
+  },
+  {
+    "code": "import(no-default-export)",
+    "column": 8,
+    "filename": "src/legacy.js",
+    "line": 3,
+    "message": "Prefer named exports",
+    "severity": "warning",
+  },
+  {
+    "code": "typescript(prefer-nullish-coalescing)",
+    "column": 14,
+    "filename": "src/nullish.ts",
+    "line": 2,
+    "message": "Prefer using nullish coalescing operator (\`??\`) instead of a logical or (\`||\`), as it is a safer operator.",
+    "severity": "warning",
+  },
+  {
+    "code": "eslint(no-var)",
+    "column": 2,
+    "filename": "src/syntax.ts",
+    "line": 2,
+    "message": "Unexpected var, use let or const instead.",
+    "severity": "error",
+  },
+  {
+    "code": "eslint(eqeqeq)",
+    "column": 15,
+    "filename": "src/syntax.ts",
+    "line": 3,
+    "message": "Expected === and instead saw ==",
+    "severity": "error",
+  },
+  {
+    "code": "import(consistent-type-specifier-style)",
+    "column": 10,
+    "filename": "src/type-import.ts",
+    "line": 1,
+    "message": "Prefer using a top-level type-only import instead of inline type specifiers.",
+    "severity": "error",
+  },
+]
+`;
+
+exports[`oxlint: next > matches snapshot 1`] = `
+[
+  {
+    "code": "react(only-export-components)",
+    "column": 17,
+    "filename": "components/Card.tsx",
+    "line": 1,
+    "message": "Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components.",
+    "severity": "warning",
+  },
+  {
+    "code": "import(no-default-export)",
+    "column": 8,
+    "filename": "components/Footer.tsx",
+    "line": 1,
+    "message": "Prefer named exports",
+    "severity": "warning",
+  },
+]
+`;
+
+exports[`oxlint: no-type-aware > matches snapshot 1`] = `
+[
+  {
+    "code": "eslint(no-var)",
+    "column": 2,
+    "filename": "src/syntax.ts",
+    "line": 2,
+    "message": "Unexpected var, use let or const instead.",
+    "severity": "error",
+  },
+  {
+    "code": "eslint(eqeqeq)",
+    "column": 15,
+    "filename": "src/syntax.ts",
+    "line": 3,
+    "message": "Expected === and instead saw ==",
+    "severity": "error",
+  },
+]
+`;
+
+exports[`oxlint: nuxt > matches snapshot 1`] = `
+[
+  {
+    "code": "import(no-default-export)",
+    "column": 8,
+    "filename": "app/composables/useCounter.ts",
+    "line": 6,
+    "message": "Prefer named exports",
+    "severity": "warning",
+  },
+  {
+    "code": "typescript(prefer-nullish-coalescing)",
+    "column": 14,
+    "filename": "app/utils/displayName.ts",
+    "line": 2,
+    "message": "Prefer using nullish coalescing operator (\`??\`) instead of a logical or (\`||\`), as it is a safer operator.",
+    "severity": "warning",
+  },
+]
+`;
+
+exports[`oxlint: overrides > matches snapshot 1`] = `
+[
+  {
+    "code": "eslint(eqeqeq)",
+    "column": 15,
+    "filename": "src/legacy/syntax.ts",
+    "line": 3,
+    "message": "Expected === and instead saw ==",
+    "severity": "error",
+  },
+  {
+    "code": "eslint(no-var)",
+    "column": 2,
+    "filename": "src/syntax.ts",
+    "line": 2,
+    "message": "Unexpected var, use let or const instead.",
+    "severity": "error",
+  },
+  {
+    "code": "eslint(eqeqeq)",
+    "column": 15,
+    "filename": "src/syntax.ts",
+    "line": 3,
+    "message": "Expected === and instead saw ==",
+    "severity": "error",
+  },
+]
+`;
+
+exports[`oxlint: react > matches snapshot 1`] = `
+[
+  {
+    "code": "react(only-export-components)",
+    "column": 17,
+    "filename": "src/components/Counter.tsx",
+    "line": 3,
+    "message": "Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components.",
+    "severity": "warning",
+  },
+  {
+    "code": "react-hooks(exhaustive-deps)",
+    "column": 45,
+    "filename": "src/components/Counter.tsx",
+    "line": 11,
+    "message": "React Hook useEffect has missing dependencies: 'count', and 'label'",
+    "severity": "warning",
+  },
+  {
+    "code": "react-hooks(rules-of-hooks)",
+    "column": 18,
+    "filename": "src/hooks/useConditional.ts",
+    "line": 9,
+    "message": "React Hook "useState" is called conditionally. React Hooks must be called in the exact same order in every component render.",
+    "severity": "error",
+  },
+]
+`;
+
+exports[`oxlint: vitest > matches snapshot 1`] = `
+[
+  {
+    "code": "vitest(no-focused-tests)",
+    "column": 5,
+    "filename": "src/sum.test.ts",
+    "line": 6,
+    "message": "Unexpected focused test.",
+    "severity": "warning",
+  },
+  {
+    "code": "vitest(expect-expect)",
+    "column": 2,
+    "filename": "src/sum.test.ts",
+    "line": 10,
+    "message": "Test has no assertions",
+    "severity": "warning",
+  },
+]
+`;
+
+exports[`oxlint: vue > matches snapshot 1`] = `
+[
+  {
+    "code": "eslint(eqeqeq)",
+    "column": 18,
+    "filename": "src/App.vue",
+    "line": 10,
+    "message": "Expected === and instead saw ==",
+    "severity": "error",
+  },
+  {
+    "code": "import(no-default-export)",
+    "column": 8,
+    "filename": "src/composables/useToggle.ts",
+    "line": 5,
+    "message": "Prefer named exports",
+    "severity": "warning",
+  },
+]
+`;

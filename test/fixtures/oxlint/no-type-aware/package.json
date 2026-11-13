@@ -1,0 +1,5 @@
+{
+	"name": "fixture-oxlint-no-type-aware",
+	"private": true,
+	"type": "module"
+}
