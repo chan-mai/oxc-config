@@ -27,16 +27,16 @@ export default defineOxlintConfig({
 });
 ```
 
-| feature     | 既定値  | 内容                                                                                                      |
-| ----------- | ------- | --------------------------------------------------------------------------------------------------------- |
-| `js`        | `true`  | `js, jsx, mjs, cjs`にJavaScript用ruleを適用                                                               |
-| `ts`        | `true`  | `ts, tsx, mts, cts`にJavaScript用とTypeScript用のruleを適用                                               |
-| `typeAware` | `true`  | type-aware lintを有効化                                                                                   |
-| `vue`       | `false` | `vue`pluginを有効化し、`.vue`にruleを適用                                                                 |
-| `nuxt`      | `false` | `vue`を有効化し、Nuxtがdefault exportを読み込むディレクトリで`import/no-default-export`を無効化           |
-| `react`     | `false` | `react`, `jsx-a11y`pluginとhooks関連のruleを有効化                                                        |
-| `next`      | `false` | `react`と`nextjs`pluginを有効化し、App RouterとPages Routerのファイルで`import/no-default-export`を無効化 |
-| `vitest`    | `false` | `vitest`pluginを有効化                                                                                    |
+| feature     | 既定値  | 内容                                                                                                        |
+| ----------- | ------- | ----------------------------------------------------------------------------------------------------------- |
+| `js`        | `true`  | `js, jsx, mjs, cjs`にJavaScript用ruleを適用                                                                 |
+| `ts`        | `true`  | `ts, tsx, mts, cts`にJavaScript用とTypeScript用のruleを適用                                                 |
+| `typeAware` | `true`  | type-aware lintを有効化                                                                                     |
+| `vue`       | `false` | `vue`pluginを有効化し、`.vue`にruleを適用                                                                   |
+| `nuxt`      | `false` | `vue`を有効化し、Nuxtと`@nuxtjs/i18n`がdefault exportを読み込むファイルで`import/no-default-export`を無効化 |
+| `react`     | `false` | `react`, `jsx-a11y`pluginとhooks関連のruleを有効化                                                          |
+| `next`      | `false` | `react`と`nextjs`pluginを有効化し、App RouterとPages Routerのファイルで`import/no-default-export`を無効化   |
+| `vitest`    | `false` | `vitest`pluginを有効化                                                                                      |
 
 何も抑制していない無効化コメント(`// oxlint-disable-line`, `// eslint-disable-line`等)は警告されます。
 
