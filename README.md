@@ -37,6 +37,17 @@ export default defineOxlintConfig({
 | `react`     | `false` | `react`, `jsx-a11y`pluginとhooks関連のruleを有効化                                                        |
 | `next`      | `false` | `react`と`nextjs`pluginを有効化し、App RouterとPages Routerのファイルで`import/no-default-export`を無効化 |
 | `vitest`    | `false` | `vitest`pluginを有効化                                                                                    |
+| `workers`   | `false` | Cloudflare Workersのエントリポイントで`import/no-default-export`を無効化                                  |
+
+`features.workers`に`true`を指定すると、`**/src/index.{ts,js}`をCloudflare Workersのエントリポイントとして扱います。wranglerの`main`に別のファイルを指定している場合は、`entry`にそのパスを指定してください。`entry`を指定した場合は、指定したパスだけが対象になります。
+
+```ts
+export default defineOxlintConfig({
+	features: {
+		workers: { entry: ['src/worker.ts'] },
+	},
+});
+```
 
 何も抑制していない無効化コメント(`// oxlint-disable-line`, `// eslint-disable-line`等)は警告されます。
 
